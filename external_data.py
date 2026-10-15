@@ -110,6 +110,6 @@ def main():
             result["feeds"][name]={"status":"unavailable","source":url,
                                     "error":str(exc)[:250],"data":[]}
         print(name,result["feeds"][name]["status"],result["feeds"][name].get("error",""))
-    OUT.write_text(json.dumps(result,indent=2,allow_nan=False)+"\\n",encoding="utf-8")
+    OUT.write_text(json.dumps(result,indent=2,allow_nan=False)+"\n",encoding="utf-8")
 
 if __name__=="__main__":main()
