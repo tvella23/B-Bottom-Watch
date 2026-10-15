@@ -1,6 +1,14 @@
 name: Update market indicators
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'collector.py'
+      - 'external_data.py'
+      - 'report_builder.py'
+      - 'requirements.txt'
+      - '.github/workflows/indicators.yml'
   schedule:
     - cron: '40 1 * * *'
 permissions:
@@ -15,6 +23,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
+      - name: Verify Python syntax
+        run: python -m py_compile collector.py external_data.py report_builder.py
       - name: Retrieve, validate and calculate
         run: python collector.py
       - name: Fetch and validate external evidence
