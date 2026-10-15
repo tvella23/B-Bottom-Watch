@@ -131,7 +131,17 @@ EF_FEAR=external_series("fear")
 if EF_FEAR is not None:
     FEAR=EF_FEAR["score"].astype(float)
     FEAR_STATUS="VERIFIED (Alternative.me primary API, independently collected)"
-    P_FEAR=chart('fear_greed.png',fear_plot)
+    def external_fear_plot(ax):
+        ax.axhspan(0,24,color=RED,alpha=.1)
+        ax.axhspan(25,44,color=GOLD,alpha=.08)
+        ax.axhspan(45,55,color=GREY,alpha=.09)
+        ax.axhspan(56,74,color=TEAL,alpha=.08)
+        ax.axhspan(75,100,color=TEAL,alpha=.13)
+        ax.plot(FEAR.index,FEAR.values,color=TEAL,marker='o',ms=3,lw=1.6)
+        ax.set_ylim(0,100)
+        ax.set_title('Fear & Greed | Primary-source daily history')
+        ax.set_ylabel('Score 0-100')
+    P_FEAR=chart('fear_greed.png',external_fear_plot)
 
 P_MVRV=P_REALIZED=P_ETF=None
 if ONCHAIN is not None:
