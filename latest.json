@@ -1,0 +1,45 @@
+{
+  "source": "Bitstamp BTCUSD public OHLC; standard non-Heikin-Ashi daily candles",
+  "generated_utc": "2026-10-15T09:36:42.403128+00:00",
+  "last_completed_candles": {
+    "day": "2026-10-14",
+    "week_ending_sunday": "2026-10-11",
+    "month_ending": "2026-09-30"
+  },
+  "quality": {
+    "daily_candle_count": 4000,
+    "recent_missing_days": 0,
+    "old_missing_days": 0,
+    "last_day_lag": 1
+  },
+  "monthly_rsi": {
+    "rsi_14": 53.271,
+    "sma_14_of_rsi": 52.2109,
+    "above": true,
+    "bullish_crossover_last_month": true
+  },
+  "weekly_ema_ribbon": {
+    "ema_values": {
+      "20": 75712.3327,
+      "25": 75583.4107,
+      "30": 75922.8316,
+      "35": 76494.2782,
+      "40": 77144.4489,
+      "45": 77779.7961,
+      "50": 78347.0536,
+      "55": 78819.0285
+    },
+    "completed_week_close": 83679.01,
+    "close_above_all": true,
+    "fully_bullish_ordered": false
+  },
+  "pi_cycle_bottom": {
+    "ema_150": 75391.9971,
+    "sma_471_times_0_745": 64595.3734,
+    "crossed_today": false,
+    "recent_historical_crossovers": [
+      "2018-12-16",
+      "2022-07-13"
+    ]
+  }
+}
