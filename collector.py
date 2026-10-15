@@ -132,6 +132,7 @@ def main():
             "recent_historical_crossovers": [str(i.date()) for i in bottom[bottom].index[-10:]]
         }
     }
+    df.to_csv("history.csv", index_label="date", float_format="%.8f")
     Path("latest.json").write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))
 
