@@ -190,7 +190,7 @@ story=[]
 story += [Spacer(1,35*mm),para('INDEPENDENT MARKET MONITORING','CoverKicker'),para('BITCOIN<br/>BOTTOM WATCH','CoverTitle'),para('Evidence-family chart report','CoverSub'),Spacer(1,30*mm),para(f'<b>Market observations through {OBS["day"]} (UTC)</b>','CoverSub'),para(f'Generated {AS_OF}','CoverSub'),Spacer(1,25*mm)]
 story += [para('ON-CHAIN VALUATION  /  CYCLE STRUCTURE  /  DEMAND & LIQUIDITY  /  PRICE MOMENTUM  /  SENTIMENT','SmallReport'),Spacer(1,23*mm),para('Research note: Indicator confirmation is not a prediction or a trading authorization. Missing independent data reduces confidence in bottom and early-bull inferences.','SmallReport'),PageBreak()]
 
-rows=[['Evidence family','Bottom / early-bull interpretation'],['On-chain valuation','UNVERIFIED: no defensible synchronized MVRV, realized price or holder metrics'],['Cycle structure','Pi Cycle Bottom: '+('new crossover' if pi_signal else 'no new crossover')+'; absent signal does not rule out bottom'],['Demand / liquidity','UNVERIFIED: no validated latest ETF-flow time series / stablecoin demand'],['Price / momentum',('Confirmed monthly RSI bullish crossover; ' if rsi_bull else 'No new monthly RSI bullish crossover; ')+('bullish EMA ribbon' if ema_bull else 'EMA ribbon not fully ordered')],['Sentiment',f'{int(FEAR.iloc[-1])} / {"Fear" if FEAR.iloc[-1]<45 else "Neutral" if FEAR.iloc[-1]<=55 else "Greed"} (overlay only)' if FEAR is not None else 'UNVERIFIED: latest Fear & Greed unavailable']]
+rows=[['Evidence family','Bottom / early-bull interpretation'],['On-chain valuation',('Verified Coin Metrics realized price / MVRV ratio; holder metrics remain unavailable' if ONCHAIN is not None else 'UNVERIFIED: no defensible synchronized MVRV, realized price or holder metrics')],['Cycle structure','Pi Cycle Bottom: '+('new crossover' if pi_signal else 'no new crossover')+'; absent signal does not rule out bottom'],['Demand / liquidity',('Dated Farside ETF flow trend available; stablecoin/CVD remain unavailable' if ETF is not None else 'UNVERIFIED: no validated latest ETF-flow time series / stablecoin demand')],['Price / momentum',('Confirmed monthly RSI bullish crossover; ' if rsi_bull else 'No new monthly RSI bullish crossover; ')+('bullish EMA ribbon' if ema_bull else 'EMA ribbon not fully ordered')],['Sentiment',f'{int(FEAR.iloc[-1])} / {"Fear" if FEAR.iloc[-1]<45 else "Neutral" if FEAR.iloc[-1]<=55 else "Greed"} (overlay only)' if FEAR is not None else 'UNVERIFIED: latest Fear & Greed unavailable']]
 section('Executive evidence summary',[
     para('This assessment differentiates evidence supporting a completed cycle bottom from evidence supporting an emerging sustained bull market. Technical momentum is ONE evidence family, not multiple independent confirmations.'),
     tab(rows),Spacer(1,7*mm),
@@ -199,12 +199,22 @@ section('Executive evidence summary',[
     para('<b>Tranche discipline:</b> No additional borrowed-funds tranche is justified by technical indicators alone. Bottom/bull probabilities are not quantified without an adequate independent evidence base.'),
     para('Data: '+AS_OF+'. Source: Bitstamp daily OHLC published and validated by GitHub collector.','SmallReport')])
 
-section('Family 1 | On-chain valuation',[
-    para('STATUS: NOT VERIFIED - no numerical MVRV or realized-price chart has been published.' ,'Verdict'),
-    para('MVRV Z-Score, realized price, realized profit/loss and long-term-holder activity require dated, internally consistent on-chain observations. No reliable synchronized price/valuation series is available in this automated report.'),
-    *textblock('How to interpret the missing indicators','MVRV Z-Score compares market value with realized cost basis after volatility normalization. Lower readings have historically accompanied more depressed valuation; recovery from low levels can support bottom formation. Realized price estimates holders’ on-chain cost basis. Accumulation, capitulation and Sell-Side Risk help distinguish a true cycle reset from temporary rallies.'),
-    *textblock('Bottom or early-bull assessment','<b>INCONCLUSIVE.</b> Without independently verified valuation and holder activity, momentum strength cannot establish that Bitcoin is attractively priced or that long-term holders are accumulating.'),
-    img(P_PRICE),para('Chart: verified market-price context ONLY, not a proxy for MVRV or realized price. Source: Bitstamp daily OHLC.','SmallReport')])
+onchain_body=(
+    [para('STATUS: VERIFIED SOURCE - Coin Metrics on-chain daily capitalization series','Verdict'),
+     img(P_REALIZED),
+     *textblock('How to read the realized-price chart','Realized price is Coin Metrics realized capitalization divided by circulating supply. The gap to market price approximates the aggregate unrealized profit or loss across last-moved on-chain coins. A shrinking gap suggests reduced valuation premium; crossing below realized price has coincided with some deep bear-market periods, but is not a guaranteed bottom.'),
+     img(P_MVRV),
+     *textblock('How to read the MVRV ratio','MVRV = market capitalization divided by realized capitalization. Values above 1 imply an aggregate valuation premium to last-moved cost basis; below 1 imply a discount. This is an MVRV RATIO, not the Glassnode MVRV Z-score. Trends and historical context matter more than a single observation.'),
+     para(f'Latest Coin Metrics observation ({ONCHAIN.index[-1].date()}): realized price <b>US${ONCHAIN["realized_price"].iloc[-1]:,.0f}</b>, MVRV ratio <b>{ONCHAIN["mvrv_ratio"].iloc[-1]:.2f}x</b>.'),
+     *textblock('Bottom or early-bull assessment',('Valuation is below aggregate realized cost basis; this can support a depressed-cycle valuation hypothesis, but does not prove a durable reversal.' if ONCHAIN["mvrv_ratio"].iloc[-1] < 1 else 'Market price remains above the aggregate realized cost basis. This is not a deep-capitulation valuation signal by itself. A durable uptrend in MVRV combined with independent spot demand would strengthen early-bull evidence.')),
+     para('Source: Coin Metrics Community API, CapRealUSD, CapMrktCurUSD and SplyCur; independent Bitstamp price-scale cross-check. Holder accumulation, realized profits and Sell-Side Risk remain UNVERIFIED.','SmallReport')]
+    if ONCHAIN is not None else
+    [para('STATUS: NOT VERIFIED - on-chain data feed did not pass validation','Verdict'),
+     para('MVRV, realized price, realized profit/loss and long-term-holder activity require reliable synchronized observations. No substitute numerical charts have been published.'),
+     *textblock('How to read it','Realized price is the aggregate on-chain last-moved cost basis. MVRV compares market cap to realized cap. Low or rising-from-low valuations can support bottom formation, but must be interpreted with independent demand and holder behaviour.'),
+     *textblock('Bottom or early-bull assessment','INCONCLUSIVE. Without verified on-chain observations, technical momentum cannot establish undervaluation or long-term-holder accumulation.'),
+     img(P_PRICE),para('Chart shows market price ONLY (Bitstamp standard candles), not on-chain valuation.','SmallReport')])
+section('Family 1 | On-chain valuation',onchain_body)
 
 section('Family 2 | Cycle / structural',[
     img(P_PI),
@@ -213,11 +223,18 @@ section('Family 2 | Cycle / structural',[
     *textblock('Bottom or early-bull assessment',('A verified new Pi crossover supports a historical-cycle bottom hypothesis, but demands independent confirmation.' if pi_signal else 'No new Pi Bottom crossover. This does not deny a completed bottom: the indicator is episodic, can lag, and may not trigger during every constructive market regime. It offers no fresh bottom confirmation today.')),
     para('Source: Bitstamp standard BTCUSD daily closes, 150-day EMA and 471-day SMA x 0.745; historical dates and latest values validated to published JSON.','SmallReport')])
 
-section('Family 3 | Demand / liquidity',[
-    para('STATUS: INSUFFICIENT CURRENT DATA - no ETF-flow or stablecoin chart has been fabricated.','Verdict'),
-    *textblock('How to read demand charts','Persistent positive net US spot ETF flows can indicate fresh capital entering Bitcoin; persistent outflows can contradict a new bull thesis. Confirm alongside spot trading volume, stablecoin growth, exchange flows and evidence that rallies are not primarily derivatives short covering.'),
-    *textblock('Bottom or early-bull assessment','<b>INCONCLUSIVE.</b> Without a fresh, adequately long and verified net-flow series, positive momentum cannot be attributed to new spot demand. This family must not be counted as confirming an early bull market.'),
-    para('Source to verify in a future expanded data collector: Farside Investors, https://farside.co.uk/btc/ ; data NOT inferred from other price measures.','SmallReport')])
+demand_body=(
+    [img(P_ETF),
+     *textblock('How to read ETF flows','Green bars indicate net ETF inflows in USD millions; red bars indicate outflows. The line is a seven-TRADING-SESSION running total. A sustained series of positive flow totals supports fresh capital demand; persistent negative totals contradict a demand-led early bull case. These are ETF flows, not total Bitcoin spot demand.'),
+     para(f'Latest dated Farside observation ({ETF.index[-1].date()}): daily net ETF flow <b>US${ETF["flow_usdm"].iloc[-1]:+,.1f}m</b>; last 7 reported sessions <b>US${ETF["flow_usdm"].iloc[-7:].sum():+,.1f}m</b>.'),
+     *textblock('Bottom or early-bull assessment',('ETF flows have been positive over the last seven reported trading sessions, supportive of fresh demand, though broader spot-market confirmation remains necessary.' if ETF["flow_usdm"].iloc[-7:].sum()>0 else 'ETF flows have been negative over the last seven reported trading sessions, cautioning against treating price momentum as a confirmed demand-led early bull.')),
+     para('Source: Farside Investors US spot BTC ETF daily total flows, https://farside.co.uk/bitcoin-etf-flow-all-data/ . Stablecoin liquidity, spot CVD and derivatives attribution remain UNVERIFIED.','SmallReport')]
+    if ETF is not None else
+    [para('STATUS: ETF FLOW SERIES UNAVAILABLE / UNVERIFIED','Verdict'),
+     *textblock('How to read ETF flows','Persistent net inflows across multiple sessions can support new capital demand; persistent outflows contradict the early bull case. Separate ETF flows from derivatives short covering and total spot market demand.'),
+     *textblock('Bottom or early-bull assessment','INCONCLUSIVE. No validated fresh ETF flow series was available; no substitute graph has been fabricated.'),
+     para('Primary source: https://farside.co.uk/bitcoin-etf-flow-all-data/ .','SmallReport')])
+section('Family 3 | Demand / liquidity',demand_body)
 
 section('Family 4 | Price and momentum',[
     img(P_RSI),
