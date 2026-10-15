@@ -45,12 +45,19 @@ def fetch_cm():
     if len(data)<365 or (TODAY-data.index[-1]).days>4:raise ValueError("Coin Metrics missing history or stale")
     if (data[["CapMrktCurUSD","CapRealUSD","SplyCur"]]<=0).any().any():raise ValueError("Invalid Coin Metrics positive values")
     data["realized_price"]=data["CapRealUSD"]/data["SplyCur"]
+    data["market_price_implied"]=data["CapMrktCurUSD"]/data["SplyCur"]
+    history=pd.read_csv(ROOT/"history.csv",parse_dates=["date"])
+    history["date"]=pd.to_datetime(history["date"],utc=True).dt.normalize()
+    aligned=data[["market_price_implied"]].join(history.set_index("date")[["close"]],how="inner").dropna()
+    aligned=aligned.iloc[-10:]
+    if len(aligned)<5 or ((aligned.market_price_implied/aligned.close-1).abs()>0.20).any():
+        raise ValueError("Coin Metrics implied spot inconsistent with independent Bitstamp history")
     data["mvrv_ratio"]=data["CapMrktCurUSD"]/data["CapRealUSD"]
     if (data["mvrv_ratio"]>50).any() or (data["mvrv_ratio"]<=0).any():raise ValueError("MVRV implausible")
     # Proper inception-to-date cumulative historical market-cap std, not a short rolling std.
     # Label methodology explicitly as Coin Metrics-derived, NOT Glassnode's published Z score.
     data["mvrv_z_proxy"]=(data["CapMrktCurUSD"]-data["CapRealUSD"])/data["CapMrktCurUSD"].expanding(min_periods=3650).std(ddof=0)
-    return data[["realized_price","mvrv_ratio","mvrv_z_proxy"]].iloc[-1095:]
+    return data[["realized_price","mvrv_ratio","mvrv_z_proxy","market_price_implied"]].iloc[-1095:]
 
 def parse_money(v):
     x=str(v).strip().replace(",","").replace("$","")
