@@ -122,12 +122,16 @@ def external_series(key):
     d=pd.DataFrame(entry["data"])
     d["date"]=pd.to_datetime(d["date"],utc=True)
     d=d.sort_values("date").drop_duplicates("date").set_index("date")
-    if (TODAY-d.index[-1]).days > (6 if key=="etf" else 4):return None
+    if (TODAY-d.index[-1]).days > (11 if key in ("mvrv_z_delayed","realized_price_delayed") else 7 if key=="etf_holdings_btc" else 6 if key=="etf" else 4):return None
     return d
 
 ONCHAIN=external_series("onchain")
 ETF=external_series("etf")
 EF_FEAR=external_series("fear")
+BG_MVRV=external_series("mvrv_z_delayed")
+BG_REAL=external_series("realized_price_delayed")
+BG_HOLDERS=external_series("long_term_holders")
+BG_ETF_HOLD=external_series("etf_holdings_btc")
 if EF_FEAR is not None:
     FEAR=EF_FEAR["score"].astype(float)
     FEAR_STATUS="VERIFIED (Alternative.me primary API, independently collected)"
@@ -169,6 +173,40 @@ if ETF is not None:
     P_ETF=chart("etf_flows.png",etf_plot)
 
 
+P_BG_MVRV=P_BG_REAL=P_BG_HOLDERS=P_BG_ETF_HOLD=None
+if BG_MVRV is not None:
+    def bg_mvrv_plot(ax):
+        m=BG_MVRV.iloc[-450:]
+        ax.plot(m.index,m["mvrvZscore"],color=TEAL,lw=1.8)
+        ax.axhline(0,color=GOLD,ls="--",lw=1)
+        ax.set_title("Bitcoin MVRV Z-Score | 7-day delayed source")
+        ax.set_ylabel("Z-score")
+    P_BG_MVRV=chart("bgeometrics_mvrv_z.png",bg_mvrv_plot)
+if BG_REAL is not None:
+    def bg_realized_plot(ax):
+        m=BG_REAL.iloc[-450:]
+        ax.plot(m.index,m["realizedPrice"],color=TEAL,lw=1.8,label="Realized price")
+        ax.plot(C.reindex(m.index).index,C.reindex(m.index).values,color=BLUE,lw=1,alpha=.7,label="Bitstamp daily close")
+        ax.set_title("Bitcoin price vs realized price | Source dated")
+        ax.set_ylabel("US dollars")
+        ax.legend(fontsize=8)
+    P_BG_REAL=chart("bgeometrics_realized.png",bg_realized_plot)
+if BG_HOLDERS is not None:
+    def bg_holder_plot(ax):
+        m=BG_HOLDERS.iloc[-365:]
+        ax.plot(m.index,m["lthNetPositionChange365dBtc"],color=TEAL,lw=1.8)
+        ax.axhline(0,color=GOLD,ls="--",lw=1)
+        ax.set_title("Long-term holder net position change | 365-day BTC")
+        ax.set_ylabel("BTC")
+    P_BG_HOLDERS=chart("bgeometrics_holders.png",bg_holder_plot)
+if BG_ETF_HOLD is not None:
+    def bg_etf_hold_plot(ax):
+        m=BG_ETF_HOLD.iloc[-120:]
+        ax.plot(m.index,m["etfBtcTotal"],color=TEAL,lw=1.8)
+        ax.set_title("Bitcoin ETF aggregate holdings | BTC, not net flows")
+        ax.set_ylabel("BTC held")
+    P_BG_ETF_HOLD=chart("bgeometrics_etf_holdings.png",bg_etf_hold_plot)
+
 ss=getSampleStyleSheet()
 ss.add(ParagraphStyle(name='CoverKicker',fontName='Helvetica-Bold',fontSize=12,leading=18,textColor=colors.HexColor(TEAL),spaceAfter=12))
 ss.add(ParagraphStyle(name='CoverTitle',fontName='Helvetica-Bold',fontSize=33,leading=39,textColor=colors.HexColor(BLUE),spaceAfter=20))
@@ -200,7 +238,7 @@ story=[]
 story += [Spacer(1,35*mm),para('INDEPENDENT MARKET MONITORING','CoverKicker'),para('BITCOIN<br/>BOTTOM WATCH','CoverTitle'),para('Evidence-family chart report','CoverSub'),Spacer(1,30*mm),para(f'<b>Market observations through {OBS["day"]} (UTC)</b>','CoverSub'),para(f'Generated {AS_OF}','CoverSub'),Spacer(1,25*mm)]
 story += [para('ON-CHAIN VALUATION  /  CYCLE STRUCTURE  /  DEMAND & LIQUIDITY  /  PRICE MOMENTUM  /  SENTIMENT','SmallReport'),Spacer(1,23*mm),para('Research note: Indicator confirmation is not a prediction or a trading authorization. Missing independent data reduces confidence in bottom and early-bull inferences.','SmallReport'),PageBreak()]
 
-rows=[['Evidence family','Bottom / early-bull interpretation'],['On-chain valuation',('Verified Coin Metrics realized price / MVRV ratio; holder metrics remain unavailable' if ONCHAIN is not None else 'UNVERIFIED: no defensible synchronized MVRV, realized price or holder metrics')],['Cycle structure','Pi Cycle Bottom: '+('new crossover' if pi_signal else 'no new crossover')+'; absent signal does not rule out bottom'],['Demand / liquidity',('Dated Farside ETF flow trend available; stablecoin/CVD remain unavailable' if ETF is not None else 'UNVERIFIED: no validated latest ETF-flow time series / stablecoin demand')],['Price / momentum',('Confirmed monthly RSI bullish crossover; ' if rsi_bull else 'No new monthly RSI bullish crossover; ')+('bullish EMA ribbon' if ema_bull else 'EMA ribbon not fully ordered')],['Sentiment',f'{int(FEAR.iloc[-1])} / {"Fear" if FEAR.iloc[-1]<45 else "Neutral" if FEAR.iloc[-1]<=55 else "Greed"} (overlay only)' if FEAR is not None else 'UNVERIFIED: latest Fear & Greed unavailable']]
+rows=[['Evidence family','Bottom / early-bull interpretation'],['On-chain valuation',('Verified recent holder positioning; delayed MVRV/realized-price history as context' if BG_HOLDERS is not None else 'On-chain validation incomplete; delayed history may be available')],['Cycle structure','Pi Cycle Bottom: '+('new crossover' if pi_signal else 'no new crossover')+'; absent signal does not rule out bottom'],['Demand / liquidity',('Dated Bitcoin ETF holdings history; current net USD ETF flows unverified' if BG_ETF_HOLD is not None else 'UNVERIFIED: no validated latest ETF-flow time series / stablecoin demand')],['Price / momentum',('Confirmed monthly RSI bullish crossover; ' if rsi_bull else 'No new monthly RSI bullish crossover; ')+('bullish EMA ribbon' if ema_bull else 'EMA ribbon not fully ordered')],['Sentiment',f'{int(FEAR.iloc[-1])} / {"Fear" if FEAR.iloc[-1]<45 else "Neutral" if FEAR.iloc[-1]<=55 else "Greed"} (overlay only)' if FEAR is not None else 'UNVERIFIED: latest Fear & Greed unavailable']]
 section('Executive evidence summary',[
     para('This assessment differentiates evidence supporting a completed cycle bottom from evidence supporting an emerging sustained bull market. Technical momentum is ONE evidence family, not multiple independent confirmations.'),
     tab(rows),Spacer(1,7*mm),
@@ -224,6 +262,19 @@ onchain_body=(
      *textblock('How to read it','Realized price is the aggregate on-chain last-moved cost basis. MVRV compares market cap to realized cap. Low or rising-from-low valuations can support bottom formation, but must be interpreted with independent demand and holder behaviour.'),
      *textblock('Bottom or early-bull assessment','INCONCLUSIVE. Without verified on-chain observations, technical momentum cannot establish undervaluation or long-term-holder accumulation.'),
      img(P_PRICE),para('Chart shows market price ONLY (Bitstamp standard candles), not on-chain valuation.','SmallReport')])
+if BG_MVRV is not None:
+    onchain_body += [img(P_BG_MVRV),
+        *textblock('How to read MVRV Z-Score','Low or negative values can accompany historically depressed valuations; rising values from those lows can support recovery. This BGeometrics FREE observation is delayed by 7 days. It is historical context, NOT a synchronized present-day reading.'),
+        para(f'Delayed MVRV Z-Score ({BG_MVRV.index[-1].date()}): <b>{BG_MVRV["mvrvZscore"].iloc[-1]:.3f}</b>. A positive value is not itself proof of a bottom or bull regime.','SmallReport')]
+if BG_REAL is not None:
+    onchain_body += [img(P_BG_REAL),
+        *textblock('How to read realized price','Compare the verified BTC market price on each common calendar date with aggregate holder cost basis. Approaching or falling below the realized price has historically signaled more depressed valuation, but not guaranteed reversals. The realized price is delayed by 7 days.'),
+        para(f'Delayed realized price ({BG_REAL.index[-1].date()}): <b>US$ {BG_REAL["realizedPrice"].iloc[-1]:,.0f}</b>; do not compare it to an undated or current spot price as a synchronous observation.','SmallReport')]
+if BG_HOLDERS is not None:
+    onchain_body += [img(P_BG_HOLDERS),
+        *textblock('How to read long-term holder positioning','Positive 365-day net position change indicates holders classified long term cumulatively added to their balance over a year. Negative readings mean net distribution. It is a slow cycle signal, not an intraday bottom trigger. Confirm methodology, changes in classification and price action before relying on it.'),
+        para(f'Long-term-holder 365-day net position change ({BG_HOLDERS.index[-1].date()}): <b>{BG_HOLDERS["lthNetPositionChange365dBtc"].iloc[-1]:,.0f} BTC</b>. Positive indicates net accumulation over this lookback, supportive of structural holding, not alone proof of a new bull.','SmallReport')]
+onchain_body += [para('Historical on-chain source: BGeometrics public daily API. Valuation metrics are explicitly delayed on its free tier. No missing/stale reading is counted as fresh tranche confirmation.','SmallReport')]
 section('Family 1 | On-chain valuation',onchain_body)
 
 section('Family 2 | Cycle / structural',[
@@ -244,6 +295,11 @@ demand_body=(
      *textblock('How to read ETF flows','Persistent net inflows across multiple sessions can support new capital demand; persistent outflows contradict the early bull case. Separate ETF flows from derivatives short covering and total spot market demand.'),
      *textblock('Bottom or early-bull assessment','INCONCLUSIVE. No validated fresh ETF flow series was available; no substitute graph has been fabricated.'),
      para('Primary source: https://farside.co.uk/bitcoin-etf-flow-all-data/ .','SmallReport')])
+if BG_ETF_HOLD is not None:
+    demand_body += [img(P_BG_ETF_HOLD),
+        *textblock('How to read ETF Bitcoin holdings','This chart is the total BTC held in the provider ETF series, NOT daily USD ETF net inflows. A persistent rise can be consistent with net creation/accumulation; a fall can be consistent with redemptions. Changes can also reflect reporting/reconciliation. It does not replace independently verified Farside flows.'),
+        para(f'Latest ETF holdings observation ({BG_ETF_HOLD.index[-1].date()}): <b>{BG_ETF_HOLD["etfBtcTotal"].iloc[-1]:,.0f} BTC</b>. Delayed aggregate holdings can provide demand context, but cannot by itself establish current fresh-capital demand.','SmallReport'),
+        para('Source: BGeometrics /v1/etf-btc-total. Separate from daily USD net flows, which remain unverified when Farside is inaccessible.','SmallReport')]
 section('Family 3 | Demand / liquidity',demand_body)
 
 section('Family 4 | Price and momentum',[
