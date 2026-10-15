@@ -115,6 +115,12 @@ def probe_bgeometrics_etf():
 def main():
     try:probe_bgeometrics_etf()
     except Exception as exc:print("BGeometrics ETF probe unavailable",str(exc)[:300])
+    for metric in ("mvrv-zscore","realized-price","lth-net-position-change-365d-btc"):
+        try:
+            z=requests.get("https://api.bitcoin-data.com/v1/"+metric,headers=HEADERS,timeout=25)
+            payload=z.json()
+            print("BGeometrics onchain probe",metric,"HTTP",z.status_code,"shape",type(payload).__name__,"len",len(payload) if isinstance(payload,list) else 0,"start",str(payload[0])[:300] if isinstance(payload,list) and payload else str(payload)[:300],"end",str(payload[-1])[:400] if isinstance(payload,list) and payload else "")
+        except Exception as exc:print("BGeometrics onchain probe",metric,"FAILED",str(exc)[:220])
     result={"generated_utc":NOW.isoformat(),"feeds":{}}
     for name,fn,url in (
         ("onchain",fetch_cm,"https://community-api.coinmetrics.io/v4/timeseries/asset-metrics"),
