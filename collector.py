@@ -35,8 +35,8 @@ def fetch_daily():
                 break
             end = int(oldest.timestamp()) - 1
             time.sleep(0.2)
-    else:
-        raise RuntimeError("Insufficient historical daily candles")
+        else:
+            raise RuntimeError("Insufficient historical daily candles")
     return pd.concat(parts, ignore_index=True)
 
 def rsi_wilder(prices, n=14):
