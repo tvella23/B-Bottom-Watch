@@ -17,11 +17,13 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Retrieve, validate and calculate
         run: python collector.py
+      - name: Build professional PDF report
+        run: python report_builder.py
       - name: Publish verified result
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add latest.json
+          git add latest.json history.csv Bitcoin_Bottom_Watch_Latest.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Update validated indicator snapshot"
             git push
