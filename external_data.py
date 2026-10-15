@@ -55,7 +55,7 @@ def fetch_cm():
 def parse_money(v):
     x=str(v).strip().replace(",","").replace("$","")
     if not x or x in ("-","—","nan","None"):return None
-    if re.fullmatch(r"\\([0-9]+(?:\\.[0-9]+)?\\)",x):x="-"+x[1:-1]
+    if x.startswith("(") and x.endswith(")"):x="-"+x[1:-1]
     try:return float(x)
     except ValueError:return None
 
