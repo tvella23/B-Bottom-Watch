@@ -101,31 +101,38 @@ def fetch_fear():
     return tab.iloc[-90:]
 
 
-def probe_bgeometrics_etf():
-    """Probe provider's documented free ETF endpoint, without assuming its schema or completeness."""
-    url="https://api.bitcoin-data.com/v1/etf-btc-total"
-    r=requests.get(url,headers=HEADERS,timeout=25)
-    print("BGeometrics ETF probe HTTP",r.status_code,"body_prefix",r.text[:1000])
+def fetch_bg(metric, column):
+    r=requests.get("https://api.bitcoin-data.com/v1/"+metric,headers=HEADERS,timeout=35)
     r.raise_for_status()
-    obj=r.json()
-    if isinstance(obj,list):print("BGeometrics ETF list samples",len(obj),str(obj[:2])[:650],str(obj[-2:])[:650])
-    elif isinstance(obj,dict):print("BGeometrics ETF object keys",list(obj.keys()),str(obj)[:1000])
-    return obj
+    payload=r.json()
+    if not isinstance(payload,list) or len(payload)<90:raise ValueError("BGeometrics insufficient historical observations")
+    tab=pd.DataFrame(payload)
+    if "d" not in tab or column not in tab:raise ValueError("BGeometrics changed response schema")
+    tab["date"]=pd.to_datetime(tab["d"],utc=True,errors="coerce")
+    tab["value"]=pd.to_numeric(tab[column],errors="coerce")
+    tab=tab.dropna(subset=["date","value"]).sort_values("date").drop_duplicates("date")
+    if len(tab)<90 or tab.date.iloc[-1]>TODAY:raise ValueError("BGeometrics invalid dates")
+    if tab.date.iloc[-1] < TODAY-pd.Timedelta(days=11):raise ValueError("BGeometrics historical observations too stale")
+    if metric=="realized-price" and not tab.value.between(100,500000).all():raise ValueError("Implausible realized price")
+    if metric=="mvrv-zscore" and not tab.value.between(-10,30).all():raise ValueError("Implausible MVRV Z-score")
+    return tab.set_index("date")[["value"]].rename(columns={"value":column}).iloc[-730:]
+
+def fetch_bg_holdings():
+    tab=fetch_bg("etf-btc-total","etfBtcTotal")
+    if not tab.etfBtcTotal.between(0,2000000).all():raise ValueError("Implausible ETF total holdings")
+    if len(tab)<40:raise ValueError("ETF holdings insufficient")
+    return tab.iloc[-180:]
 
 def main():
-    try:probe_bgeometrics_etf()
-    except Exception as exc:print("BGeometrics ETF probe unavailable",str(exc)[:300])
-    for metric in ("mvrv-zscore","realized-price","lth-net-position-change-365d-btc"):
-        try:
-            z=requests.get("https://api.bitcoin-data.com/v1/"+metric,headers=HEADERS,timeout=25)
-            payload=z.json()
-            print("BGeometrics onchain probe",metric,"HTTP",z.status_code,"shape",type(payload).__name__,"len",len(payload) if isinstance(payload,list) else 0,"start",str(payload[0])[:300] if isinstance(payload,list) and payload else str(payload)[:300],"end",str(payload[-1])[:400] if isinstance(payload,list) and payload else "")
-        except Exception as exc:print("BGeometrics onchain probe",metric,"FAILED",str(exc)[:220])
     result={"generated_utc":NOW.isoformat(),"feeds":{}}
     for name,fn,url in (
         ("onchain",fetch_cm,"https://community-api.coinmetrics.io/v4/timeseries/asset-metrics"),
         ("etf",fetch_farside,"https://farside.co.uk/bitcoin-etf-flow-all-data/"),
         ("fear",fetch_fear,"https://api.alternative.me/fng/?limit=120&format=json"),
+        ("mvrv_z_delayed",lambda:fetch_bg("mvrv-zscore","mvrvZscore"),"https://api.bitcoin-data.com/v1/mvrv-zscore"),
+        ("realized_price_delayed",lambda:fetch_bg("realized-price","realizedPrice"),"https://api.bitcoin-data.com/v1/realized-price"),
+        ("long_term_holders",lambda:fetch_bg("lth-net-position-change-365d-btc","lthNetPositionChange365dBtc"),"https://api.bitcoin-data.com/v1/lth-net-position-change-365d-btc"),
+        ("etf_holdings_btc",fetch_bg_holdings,"https://api.bitcoin-data.com/v1/etf-btc-total"),
     ):
         try:
             series=fn()
