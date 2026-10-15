@@ -100,7 +100,21 @@ def fetch_fear():
         raise ValueError("Fear & Greed missing/stale/out of bounds")
     return tab.iloc[-90:]
 
+
+def probe_bgeometrics_etf():
+    """Probe provider's documented free ETF endpoint, without assuming its schema or completeness."""
+    url="https://api.bitcoin-data.com/v1/etf-btc-total"
+    r=requests.get(url,headers=HEADERS,timeout=25)
+    print("BGeometrics ETF probe HTTP",r.status_code,"body_prefix",r.text[:1000])
+    r.raise_for_status()
+    obj=r.json()
+    if isinstance(obj,list):print("BGeometrics ETF list samples",len(obj),str(obj[:2])[:650],str(obj[-2:])[:650])
+    elif isinstance(obj,dict):print("BGeometrics ETF object keys",list(obj.keys()),str(obj)[:1000])
+    return obj
+
 def main():
+    try:probe_bgeometrics_etf()
+    except Exception as exc:print("BGeometrics ETF probe unavailable",str(exc)[:300])
     result={"generated_utc":NOW.isoformat(),"feeds":{}}
     for name,fn,url in (
         ("onchain",fetch_cm,"https://community-api.coinmetrics.io/v4/timeseries/asset-metrics"),
