@@ -105,8 +105,59 @@ if FEAR is not None:
         ax.plot(FEAR.index,FEAR.values,color=TEAL,marker='o',ms=3,lw=1.6);ax.set_ylim(0,100);ax.set_title('Fear & Greed | Primary-source daily history');ax.set_ylabel('Score 0-100')
     P_FEAR=chart('fear_greed.png',fear_plot)
 
-# ETF flow timeseries remains withheld until current dated Farside figures are fetched/parsed and validated.
-# On-chain MVRV/realized-cost metrics are withheld without synchronized, reliable history.
+# Optional independent data feeds are published as one dated, quality-gated JSON artifact.
+EXTERNAL={"feeds":{}}
+external_path=ROOT/"external_data.json"
+if external_path.exists():
+    try:
+        ex=json.loads(external_path.read_text(encoding="utf-8"))
+        if (pd.Timestamp(SNAP["generated_utc"])-pd.Timestamp(ex["generated_utc"])).total_seconds() < 3600 and abs((pd.Timestamp(SNAP["generated_utc"])-pd.Timestamp(ex["generated_utc"])).total_seconds()) < 3600:
+            EXTERNAL=ex
+    except Exception:
+        pass
+
+def external_series(key):
+    entry=EXTERNAL.get("feeds",{}).get(key,{})
+    if entry.get("status")!="verified" or not entry.get("data"):return None
+    d=pd.DataFrame(entry["data"])
+    d["date"]=pd.to_datetime(d["date"],utc=True)
+    d=d.sort_values("date").drop_duplicates("date").set_index("date")
+    if (TODAY-d.index[-1]).days > (6 if key=="etf" else 4):return None
+    return d
+
+ONCHAIN=external_series("onchain")
+ETF=external_series("etf")
+EF_FEAR=external_series("fear")
+if EF_FEAR is not None:
+    FEAR=EF_FEAR["score"].astype(float)
+    FEAR_STATUS="VERIFIED (Alternative.me primary API, independently collected)"
+    P_FEAR=chart('fear_greed.png',fear_plot)
+
+P_MVRV=P_REALIZED=P_ETF=None
+if ONCHAIN is not None:
+    def realized_plot(ax):
+        on=ONCHAIN.loc[ONCHAIN.index>=ONCHAIN.index[-1]-pd.Timedelta(days=730)]
+        ax.plot(on.index,on["market_price_implied"],label="Implied spot price (Coin Metrics)",color=BLUE,lw=1.6)
+        ax.plot(on.index,on["realized_price"],label="Realized price",color=TEAL,lw=1.8)
+        ax.set_title("On-chain valuation | Price and realized cost basis");ax.set_ylabel("USD");ax.legend(fontsize=8)
+    P_REALIZED=chart("realized_price.png",realized_plot)
+    def mvrv_plot(ax):
+        on=ONCHAIN.loc[ONCHAIN.index>=ONCHAIN.index[-1]-pd.Timedelta(days=730)]
+        ax.plot(on.index,on["mvrv_ratio"],label="MVRV ratio",color=TEAL,lw=1.8)
+        ax.axhline(1,color=GOLD,linestyle="--",lw=1,label="Realized cost parity (1x)")
+        ax.set_title("On-chain valuation | MVRV ratio");ax.set_ylabel("Ratio");ax.legend(fontsize=8)
+    P_MVRV=chart("mvrv_ratio.png",mvrv_plot)
+if ETF is not None:
+    def etf_plot(ax):
+        et=ETF.iloc[-60:].copy()
+        ax.bar(et.index,et["flow_usdm"],width=0.9,color=[TEAL if v>=0 else RED for v in et["flow_usdm"]],alpha=.6,label="Daily net flows")
+        ax2=ax.twinx()
+        ax2.plot(et.index,et["flow_usdm"].rolling(7,min_periods=7).sum(),color=BLUE,lw=2,label="7-session sum")
+        ax.set_title("US spot BTC ETFs | Net flows and seven-session trend")
+        ax.set_ylabel("Daily USD millions")
+        ax2.set_ylabel("7-session cumulative USD millions")
+    P_ETF=chart("etf_flows.png",etf_plot)
+
 
 ss=getSampleStyleSheet()
 ss.add(ParagraphStyle(name='CoverKicker',fontName='Helvetica-Bold',fontSize=12,leading=18,textColor=colors.HexColor(TEAL),spaceAfter=12))
