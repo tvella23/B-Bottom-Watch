@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-20T06:35:04.707099+00:00",
+  "generated_utc": "2026-10-21T06:33:35.726627+00:00",
   "feeds": {
     "onchain": {
       "status": "unavailable",
@@ -16,13 +16,9 @@
     "fear": {
       "status": "verified",
       "source": "https://api.alternative.me/fng/?limit=120&format=json",
-      "latest_date": "2026-10-20",
+      "latest_date": "2026-10-21",
       "records": 90,
       "data": [
-        {
-          "date": "2026-07-23",
-          "score": 31.0
-        },
         {
           "date": "2026-07-24",
           "score": 28.0
@@ -378,19 +374,19 @@
         {
           "date": "2026-10-20",
           "score": 55.0
+        },
+        {
+          "date": "2026-10-21",
+          "score": 63.0
         }
       ]
     },
     "mvrv_z_delayed": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/mvrv-zscore",
-      "latest_date": "2026-10-13",
+      "latest_date": "2026-10-14",
       "records": 730,
       "data": [
-        {
-          "date": "2024-10-14",
-          "mvrvZscore": 1.8443
-        },
         {
           "date": "2024-10-15",
           "mvrvZscore": 1.8845
@@ -3306,19 +3302,19 @@
         {
           "date": "2026-10-13",
           "mvrvZscore": 0.9731
+        },
+        {
+          "date": "2026-10-14",
+          "mvrvZscore": 0.9213
         }
       ]
     },
     "realized_price_delayed": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/realized-price",
-      "latest_date": "2026-10-13",
+      "latest_date": "2026-10-14",
       "records": 730,
       "data": [
-        {
-          "date": "2024-10-14",
-          "realizedPrice": 32404.5
-        },
         {
           "date": "2024-10-15",
           "realizedPrice": 32489.4
@@ -6234,19 +6230,19 @@
         {
           "date": "2026-10-13",
           "realizedPrice": 53485.56
+        },
+        {
+          "date": "2026-10-14",
+          "realizedPrice": 53488.52
         }
       ]
     },
     "long_term_holders": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/lth-net-position-change-365d-btc",
-      "latest_date": "2026-10-18",
+      "latest_date": "2026-10-19",
       "records": 730,
       "data": [
-        {
-          "date": "2024-10-17",
-          "lthNetPositionChange365dBtc": -192156.3336495
-        },
         {
           "date": "2024-10-18",
           "lthNetPositionChange365dBtc": -244824.0214045
@@ -9162,6 +9158,10 @@
         {
           "date": "2026-10-18",
           "lthNetPositionChange365dBtc": 1171527.0410971
+        },
+        {
+          "date": "2026-10-19",
+          "lthNetPositionChange365dBtc": 1159684.1674785
         }
       ]
     },
