@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-31T07:29:26.861087+00:00",
+  "generated_utc": "2026-11-01T08:08:04.667564+00:00",
   "feeds": {
     "onchain": {
       "status": "unavailable",
@@ -16,13 +16,9 @@
     "fear": {
       "status": "verified",
       "source": "https://api.alternative.me/fng/?limit=120&format=json",
-      "latest_date": "2026-10-31",
+      "latest_date": "2026-11-01",
       "records": 90,
       "data": [
-        {
-          "date": "2026-08-03",
-          "score": 28.0
-        },
         {
           "date": "2026-08-04",
           "score": 25.0
@@ -378,19 +374,19 @@
         {
           "date": "2026-10-31",
           "score": 30.0
+        },
+        {
+          "date": "2026-11-01",
+          "score": 34.0
         }
       ]
     },
     "mvrv_z_delayed": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/mvrv-zscore",
-      "latest_date": "2026-10-30",
+      "latest_date": "2026-10-31",
       "records": 730,
       "data": [
-        {
-          "date": "2024-10-31",
-          "mvrvZscore": 2.0133
-        },
         {
           "date": "2024-11-01",
           "mvrvZscore": 1.9624
@@ -3306,19 +3302,19 @@
         {
           "date": "2026-10-30",
           "mvrvZscore": 0.7585
+        },
+        {
+          "date": "2026-10-31",
+          "mvrvZscore": 0.7668
         }
       ]
     },
     "realized_price_delayed": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/realized-price",
-      "latest_date": "2026-10-24",
+      "latest_date": "2026-10-25",
       "records": 730,
       "data": [
-        {
-          "date": "2024-10-25",
-          "realizedPrice": 32869.7
-        },
         {
           "date": "2024-10-26",
           "realizedPrice": 32880.6
@@ -4765,1488 +4761,1488 @@
         },
         {
           "date": "2025-10-22",
-          "realizedPrice": 55233.9
+          "realizedPrice": 55425.26
         },
         {
           "date": "2025-10-23",
-          "realizedPrice": 55178.4
+          "realizedPrice": 55467.38
         },
         {
           "date": "2025-10-24",
-          "realizedPrice": 54905.8
+          "realizedPrice": 55494.51
         },
         {
           "date": "2025-10-25",
-          "realizedPrice": 54826.2
+          "realizedPrice": 55513.69
         },
         {
           "date": "2025-10-26",
-          "realizedPrice": 54779.4
+          "realizedPrice": 55560.62
         },
         {
           "date": "2025-10-27",
-          "realizedPrice": 54835.0
+          "realizedPrice": 55627.37
         },
         {
           "date": "2025-10-28",
-          "realizedPrice": 54894.58
+          "realizedPrice": 55736.01
         },
         {
           "date": "2025-10-29",
-          "realizedPrice": 54834.77
+          "realizedPrice": 55788.08
         },
         {
           "date": "2025-10-30",
-          "realizedPrice": 54887.92
+          "realizedPrice": 55841.99
         },
         {
           "date": "2025-10-31",
-          "realizedPrice": 54840.03
+          "realizedPrice": 55793.11
         },
         {
           "date": "2025-11-01",
-          "realizedPrice": 54899.34
+          "realizedPrice": 55853.3
         },
         {
           "date": "2025-11-02",
-          "realizedPrice": 54921.47
+          "realizedPrice": 55875.65
         },
         {
           "date": "2025-11-03",
-          "realizedPrice": 54951.73
+          "realizedPrice": 55906.28
         },
         {
           "date": "2025-11-04",
-          "realizedPrice": 54913.04
+          "realizedPrice": 55866.76
         },
         {
           "date": "2025-11-05",
-          "realizedPrice": 54996.25
+          "realizedPrice": 55951.26
         },
         {
           "date": "2025-11-06",
-          "realizedPrice": 55016.43
+          "realizedPrice": 55956.66
         },
         {
           "date": "2025-11-07",
-          "realizedPrice": 55190.21
+          "realizedPrice": 56127.16
         },
         {
           "date": "2025-11-08",
-          "realizedPrice": 55203.91
+          "realizedPrice": 56140.8
         },
         {
           "date": "2025-11-09",
-          "realizedPrice": 55225.68
+          "realizedPrice": 56144.25
         },
         {
           "date": "2025-11-10",
-          "realizedPrice": 55233.45
+          "realizedPrice": 56146.73
         },
         {
           "date": "2025-11-11",
-          "realizedPrice": 55309.34
+          "realizedPrice": 56219.29
         },
         {
           "date": "2025-11-12",
-          "realizedPrice": 55347.3
+          "realizedPrice": 56254.11
         },
         {
           "date": "2025-11-13",
-          "realizedPrice": 55305.89
+          "realizedPrice": 56201.65
         },
         {
           "date": "2025-11-14",
-          "realizedPrice": 55201.54
+          "realizedPrice": 56087.48
         },
         {
           "date": "2025-11-15",
-          "realizedPrice": 55283.91
+          "realizedPrice": 56153.44
         },
         {
           "date": "2025-11-16",
-          "realizedPrice": 55227.15
+          "realizedPrice": 56084.04
         },
         {
           "date": "2025-11-17",
-          "realizedPrice": 55249.93
+          "realizedPrice": 56105.23
         },
         {
           "date": "2025-11-18",
-          "realizedPrice": 55295.35
+          "realizedPrice": 56130.72
         },
         {
           "date": "2025-11-19",
-          "realizedPrice": 55278.7
+          "realizedPrice": 56079.51
         },
         {
           "date": "2025-11-20",
-          "realizedPrice": 55249.15
+          "realizedPrice": 56047.15
         },
         {
           "date": "2025-11-21",
-          "realizedPrice": 55103.42
+          "realizedPrice": 55889.53
         },
         {
           "date": "2025-11-22",
-          "realizedPrice": 55276.73
+          "realizedPrice": 56051.03
         },
         {
           "date": "2025-11-23",
-          "realizedPrice": 55603.11
+          "realizedPrice": 56367.04
         },
         {
           "date": "2025-11-24",
-          "realizedPrice": 55648.94
+          "realizedPrice": 56403.61
         },
         {
           "date": "2025-11-25",
-          "realizedPrice": 55607.55
+          "realizedPrice": 56361.11
         },
         {
           "date": "2025-11-26",
-          "realizedPrice": 55721.19
+          "realizedPrice": 56472.29
         },
         {
           "date": "2025-11-27",
-          "realizedPrice": 55675.99
+          "realizedPrice": 56417.56
         },
         {
           "date": "2025-11-28",
-          "realizedPrice": 55698.88
+          "realizedPrice": 56429.43
         },
         {
           "date": "2025-11-29",
-          "realizedPrice": 55665.46
+          "realizedPrice": 56393.28
         },
         {
           "date": "2025-11-30",
-          "realizedPrice": 55702.74
+          "realizedPrice": 56430.89
         },
         {
           "date": "2025-12-01",
-          "realizedPrice": 55659.28
+          "realizedPrice": 56386.7
         },
         {
           "date": "2025-12-02",
-          "realizedPrice": 55633.52
+          "realizedPrice": 56360.44
         },
         {
           "date": "2025-12-03",
-          "realizedPrice": 55625.91
+          "realizedPrice": 56352.57
         },
         {
           "date": "2025-12-04",
-          "realizedPrice": 55659.03
+          "realizedPrice": 56385.97
         },
         {
           "date": "2025-12-05",
-          "realizedPrice": 55641.05
+          "realizedPrice": 56357.44
         },
         {
           "date": "2025-12-06",
-          "realizedPrice": 55593.66
+          "realizedPrice": 56304.83
         },
         {
           "date": "2025-12-07",
-          "realizedPrice": 55258.29
+          "realizedPrice": 55964.97
         },
         {
           "date": "2025-12-08",
-          "realizedPrice": 55151.5
+          "realizedPrice": 55856.66
         },
         {
           "date": "2025-12-09",
-          "realizedPrice": 55190.66
+          "realizedPrice": 55895.32
         },
         {
           "date": "2025-12-10",
-          "realizedPrice": 55428.82
+          "realizedPrice": 56136.36
         },
         {
           "date": "2025-12-11",
-          "realizedPrice": 55705.66
+          "realizedPrice": 56392.34
         },
         {
           "date": "2025-12-12",
-          "realizedPrice": 55684.76
+          "realizedPrice": 56368.66
         },
         {
           "date": "2025-12-13",
-          "realizedPrice": 55697.91
+          "realizedPrice": 56384.17
         },
         {
           "date": "2025-12-14",
-          "realizedPrice": 55652.58
+          "realizedPrice": 56338.13
         },
         {
           "date": "2025-12-15",
-          "realizedPrice": 55630.72
+          "realizedPrice": 56315.84
         },
         {
           "date": "2025-12-16",
-          "realizedPrice": 55608.63
+          "realizedPrice": 56290.96
         },
         {
           "date": "2025-12-17",
-          "realizedPrice": 55588.38
+          "realizedPrice": 56269.3
         },
         {
           "date": "2025-12-18",
-          "realizedPrice": 55586.23
+          "realizedPrice": 56263.49
         },
         {
           "date": "2025-12-19",
-          "realizedPrice": 55596.42
+          "realizedPrice": 56273.52
         },
         {
           "date": "2025-12-20",
-          "realizedPrice": 55434.0
+          "realizedPrice": 56103.71
         },
         {
           "date": "2025-12-21",
-          "realizedPrice": 55529.18
+          "realizedPrice": 56199.88
         },
         {
           "date": "2025-12-22",
-          "realizedPrice": 55434.04
+          "realizedPrice": 56094.65
         },
         {
           "date": "2025-12-23",
-          "realizedPrice": 55568.01
+          "realizedPrice": 56228.13
         },
         {
           "date": "2025-12-24",
-          "realizedPrice": 55561.03
+          "realizedPrice": 56208.44
         },
         {
           "date": "2025-12-25",
-          "realizedPrice": 55569.5
+          "realizedPrice": 56216.85
         },
         {
           "date": "2025-12-26",
-          "realizedPrice": 55535.28
+          "realizedPrice": 56182.07
         },
         {
           "date": "2025-12-27",
-          "realizedPrice": 55528.0
+          "realizedPrice": 56174.55
         },
         {
           "date": "2025-12-28",
-          "realizedPrice": 55524.43
+          "realizedPrice": 56167.59
         },
         {
           "date": "2025-12-29",
-          "realizedPrice": 55529.66
+          "realizedPrice": 56167.77
         },
         {
           "date": "2025-12-30",
-          "realizedPrice": 55511.22
+          "realizedPrice": 56142.93
         },
         {
           "date": "2025-12-31",
-          "realizedPrice": 55484.52
+          "realizedPrice": 56115.45
         },
         {
           "date": "2026-01-01",
-          "realizedPrice": 55318.57
+          "realizedPrice": 55947.45
         },
         {
           "date": "2026-01-02",
-          "realizedPrice": 55363.54
+          "realizedPrice": 55981.95
         },
         {
           "date": "2026-01-03",
-          "realizedPrice": 55443.97
+          "realizedPrice": 56061.86
         },
         {
           "date": "2026-01-04",
-          "realizedPrice": 55494.5
+          "realizedPrice": 56111.64
         },
         {
           "date": "2026-01-05",
-          "realizedPrice": 55521.54
+          "realizedPrice": 56138.82
         },
         {
           "date": "2026-01-06",
-          "realizedPrice": 55541.39
+          "realizedPrice": 56158.73
         },
         {
           "date": "2026-01-07",
-          "realizedPrice": 55566.83
+          "realizedPrice": 56182.19
         },
         {
           "date": "2026-01-08",
-          "realizedPrice": 55239.52
+          "realizedPrice": 55854.34
         },
         {
           "date": "2026-01-09",
-          "realizedPrice": 55536.49
+          "realizedPrice": 56151.19
         },
         {
           "date": "2026-01-10",
-          "realizedPrice": 55543.35
+          "realizedPrice": 56157.52
         },
         {
           "date": "2026-01-11",
-          "realizedPrice": 55533.78
+          "realizedPrice": 56147.68
         },
         {
           "date": "2026-01-12",
-          "realizedPrice": 55507.55
+          "realizedPrice": 56111.08
         },
         {
           "date": "2026-01-13",
-          "realizedPrice": 55408.95
+          "realizedPrice": 56010.06
         },
         {
           "date": "2026-01-14",
-          "realizedPrice": 55646.48
+          "realizedPrice": 56244.18
         },
         {
           "date": "2026-01-15",
-          "realizedPrice": 55597.59
+          "realizedPrice": 56192.9
         },
         {
           "date": "2026-01-16",
-          "realizedPrice": 55690.91
+          "realizedPrice": 56281.82
         },
         {
           "date": "2026-01-17",
-          "realizedPrice": 55692.9
+          "realizedPrice": 56270.22
         },
         {
           "date": "2026-01-18",
-          "realizedPrice": 55563.68
+          "realizedPrice": 56139.5
         },
         {
           "date": "2026-01-19",
-          "realizedPrice": 55710.51
+          "realizedPrice": 56283.22
         },
         {
           "date": "2026-01-20",
-          "realizedPrice": 55659.04
+          "realizedPrice": 56231.06
         },
         {
           "date": "2026-01-21",
-          "realizedPrice": 55645.27
+          "realizedPrice": 56210.67
         },
         {
           "date": "2026-01-22",
-          "realizedPrice": 55612.78
+          "realizedPrice": 56177.69
         },
         {
           "date": "2026-01-23",
-          "realizedPrice": 55429.01
+          "realizedPrice": 55987.3
         },
         {
           "date": "2026-01-24",
-          "realizedPrice": 55414.8
+          "realizedPrice": 55972.79
         },
         {
           "date": "2026-01-25",
-          "realizedPrice": 55373.83
+          "realizedPrice": 55931.25
         },
         {
           "date": "2026-01-26",
-          "realizedPrice": 55400.61
+          "realizedPrice": 55957.37
         },
         {
           "date": "2026-01-27",
-          "realizedPrice": 55372.45
+          "realizedPrice": 55928.6
         },
         {
           "date": "2026-01-28",
-          "realizedPrice": 55415.92
+          "realizedPrice": 55972.35
         },
         {
           "date": "2026-01-29",
-          "realizedPrice": 55366.78
+          "realizedPrice": 55920.66
         },
         {
           "date": "2026-01-30",
-          "realizedPrice": 55331.93
+          "realizedPrice": 55882.49
         },
         {
           "date": "2026-01-31",
-          "realizedPrice": 55283.46
+          "realizedPrice": 55833.38
         },
         {
           "date": "2026-02-01",
-          "realizedPrice": 55224.98
+          "realizedPrice": 55773.55
         },
         {
           "date": "2026-02-02",
-          "realizedPrice": 55219.97
+          "realizedPrice": 55767.18
         },
         {
           "date": "2026-02-03",
-          "realizedPrice": 55119.75
+          "realizedPrice": 55665.81
         },
         {
           "date": "2026-02-04",
-          "realizedPrice": 54987.35
+          "realizedPrice": 55528.49
         },
         {
           "date": "2026-02-05",
-          "realizedPrice": 54748.75
+          "realizedPrice": 55287.38
         },
         {
           "date": "2026-02-06",
-          "realizedPrice": 54667.59
+          "realizedPrice": 55205.27
         },
         {
           "date": "2026-02-07",
-          "realizedPrice": 54612.45
+          "realizedPrice": 55148.3
         },
         {
           "date": "2026-02-08",
-          "realizedPrice": 54621.59
+          "realizedPrice": 55157.38
         },
         {
           "date": "2026-02-09",
-          "realizedPrice": 54562.87
+          "realizedPrice": 55097.92
         },
         {
           "date": "2026-02-10",
-          "realizedPrice": 54508.3
+          "realizedPrice": 55048.35
         },
         {
           "date": "2026-02-11",
-          "realizedPrice": 54455.28
+          "realizedPrice": 54995.26
         },
         {
           "date": "2026-02-12",
-          "realizedPrice": 54397.65
+          "realizedPrice": 54936.29
         },
         {
           "date": "2026-02-13",
-          "realizedPrice": 54291.94
+          "realizedPrice": 54823.72
         },
         {
           "date": "2026-02-14",
-          "realizedPrice": 54361.61
+          "realizedPrice": 54893.92
         },
         {
           "date": "2026-02-15",
-          "realizedPrice": 54341.6
+          "realizedPrice": 54873.56
         },
         {
           "date": "2026-02-16",
-          "realizedPrice": 54185.32
+          "realizedPrice": 54715.59
         },
         {
           "date": "2026-02-17",
-          "realizedPrice": 54285.31
+          "realizedPrice": 54816.4
         },
         {
           "date": "2026-02-18",
-          "realizedPrice": 54153.7
+          "realizedPrice": 54683.35
         },
         {
           "date": "2026-02-19",
-          "realizedPrice": 54250.42
+          "realizedPrice": 54775.22
         },
         {
           "date": "2026-02-20",
-          "realizedPrice": 54198.78
+          "realizedPrice": 54722.92
         },
         {
           "date": "2026-02-21",
-          "realizedPrice": 54182.07
+          "realizedPrice": 54705.45
         },
         {
           "date": "2026-02-22",
-          "realizedPrice": 54191.87
+          "realizedPrice": 54715.19
         },
         {
           "date": "2026-02-23",
-          "realizedPrice": 54141.03
+          "realizedPrice": 54663.7
         },
         {
           "date": "2026-02-24",
-          "realizedPrice": 54076.19
+          "realizedPrice": 54596.99
         },
         {
           "date": "2026-02-25",
-          "realizedPrice": 54038.13
+          "realizedPrice": 54558.41
         },
         {
           "date": "2026-02-26",
-          "realizedPrice": 54058.14
+          "realizedPrice": 54578.46
         },
         {
           "date": "2026-02-27",
-          "realizedPrice": 54019.45
+          "realizedPrice": 54539.24
         },
         {
           "date": "2026-02-28",
-          "realizedPrice": 54010.96
+          "realizedPrice": 54530.51
         },
         {
           "date": "2026-03-01",
-          "realizedPrice": 53995.7
+          "realizedPrice": 54514.95
         },
         {
           "date": "2026-03-02",
-          "realizedPrice": 53985.6
+          "realizedPrice": 54504.6
         },
         {
           "date": "2026-03-03",
-          "realizedPrice": 53990.84
+          "realizedPrice": 54509.42
         },
         {
           "date": "2026-03-04",
-          "realizedPrice": 53991.44
+          "realizedPrice": 54511.28
         },
         {
           "date": "2026-03-05",
-          "realizedPrice": 53969.31
+          "realizedPrice": 54487.38
         },
         {
           "date": "2026-03-06",
-          "realizedPrice": 53939.17
+          "realizedPrice": 54456.79
         },
         {
           "date": "2026-03-07",
-          "realizedPrice": 53931.97
+          "realizedPrice": 54448.0
         },
         {
           "date": "2026-03-08",
-          "realizedPrice": 53911.69
+          "realizedPrice": 54427.37
         },
         {
           "date": "2026-03-09",
-          "realizedPrice": 53915.55
+          "realizedPrice": 54431.12
         },
         {
           "date": "2026-03-10",
-          "realizedPrice": 53907.49
+          "realizedPrice": 54420.82
         },
         {
           "date": "2026-03-11",
-          "realizedPrice": 53838.4
+          "realizedPrice": 54348.07
         },
         {
           "date": "2026-03-12",
-          "realizedPrice": 53841.75
+          "realizedPrice": 54351.3
         },
         {
           "date": "2026-03-13",
-          "realizedPrice": 53845.11
+          "realizedPrice": 54352.98
         },
         {
           "date": "2026-03-14",
-          "realizedPrice": 53833.17
+          "realizedPrice": 54342.33
         },
         {
           "date": "2026-03-15",
-          "realizedPrice": 53815.89
+          "realizedPrice": 54324.73
         },
         {
           "date": "2026-03-16",
-          "realizedPrice": 53820.53
+          "realizedPrice": 54325.26
         },
         {
           "date": "2026-03-17",
-          "realizedPrice": 53862.95
+          "realizedPrice": 54371.93
         },
         {
           "date": "2026-03-18",
-          "realizedPrice": 53836.85
+          "realizedPrice": 54341.12
         },
         {
           "date": "2026-03-19",
-          "realizedPrice": 53796.07
+          "realizedPrice": 54299.14
         },
         {
           "date": "2026-03-20",
-          "realizedPrice": 53803.09
+          "realizedPrice": 54306.07
         },
         {
           "date": "2026-03-21",
-          "realizedPrice": 53780.54
+          "realizedPrice": 54283.16
         },
         {
           "date": "2026-03-22",
-          "realizedPrice": 53824.93
+          "realizedPrice": 54332.81
         },
         {
           "date": "2026-03-23",
-          "realizedPrice": 53825.82
+          "realizedPrice": 54323.8
         },
         {
           "date": "2026-03-24",
-          "realizedPrice": 53753.17
+          "realizedPrice": 54249.73
         },
         {
           "date": "2026-03-25",
-          "realizedPrice": 53768.01
+          "realizedPrice": 54262.8
         },
         {
           "date": "2026-03-26",
-          "realizedPrice": 53752.97
+          "realizedPrice": 54246.84
         },
         {
           "date": "2026-03-27",
-          "realizedPrice": 53683.53
+          "realizedPrice": 54176.6
         },
         {
           "date": "2026-03-28",
-          "realizedPrice": 53672.65
+          "realizedPrice": 54165.47
         },
         {
           "date": "2026-03-29",
-          "realizedPrice": 53664.39
+          "realizedPrice": 54156.98
         },
         {
           "date": "2026-03-30",
-          "realizedPrice": 53646.15
+          "realizedPrice": 54138.42
         },
         {
           "date": "2026-03-31",
-          "realizedPrice": 53644.55
+          "realizedPrice": 54136.66
         },
         {
           "date": "2026-04-01",
-          "realizedPrice": 53641.08
+          "realizedPrice": 54132.39
         },
         {
           "date": "2026-04-02",
-          "realizedPrice": 53608.48
+          "realizedPrice": 54099.22
         },
         {
           "date": "2026-04-03",
-          "realizedPrice": 53583.54
+          "realizedPrice": 54073.9
         },
         {
           "date": "2026-04-04",
-          "realizedPrice": 53586.5
+          "realizedPrice": 54076.74
         },
         {
           "date": "2026-04-05",
-          "realizedPrice": 53596.21
+          "realizedPrice": 54083.57
         },
         {
           "date": "2026-04-06",
-          "realizedPrice": 53618.63
+          "realizedPrice": 54106.04
         },
         {
           "date": "2026-04-07",
-          "realizedPrice": 53614.62
+          "realizedPrice": 54101.75
         },
         {
           "date": "2026-04-08",
-          "realizedPrice": 53627.76
+          "realizedPrice": 54114.86
         },
         {
           "date": "2026-04-09",
-          "realizedPrice": 53631.76
+          "realizedPrice": 54118.83
         },
         {
           "date": "2026-04-10",
-          "realizedPrice": 53523.39
+          "realizedPrice": 54007.49
         },
         {
           "date": "2026-04-11",
-          "realizedPrice": 53608.67
+          "realizedPrice": 54092.05
         },
         {
           "date": "2026-04-12",
-          "realizedPrice": 53651.42
+          "realizedPrice": 54135.03
         },
         {
           "date": "2026-04-13",
-          "realizedPrice": 53640.99
+          "realizedPrice": 54122.24
         },
         {
           "date": "2026-04-14",
-          "realizedPrice": 53670.11
+          "realizedPrice": 54151.46
         },
         {
           "date": "2026-04-15",
-          "realizedPrice": 53661.21
+          "realizedPrice": 54142.33
         },
         {
           "date": "2026-04-16",
-          "realizedPrice": 53665.03
+          "realizedPrice": 54148.16
         },
         {
           "date": "2026-04-17",
-          "realizedPrice": 53702.22
+          "realizedPrice": 54186.87
         },
         {
           "date": "2026-04-18",
-          "realizedPrice": 53693.28
+          "realizedPrice": 54176.35
         },
         {
           "date": "2026-04-19",
-          "realizedPrice": 53658.72
+          "realizedPrice": 54141.33
         },
         {
           "date": "2026-04-20",
-          "realizedPrice": 53680.77
+          "realizedPrice": 54163.43
         },
         {
           "date": "2026-04-21",
-          "realizedPrice": 53702.86
+          "realizedPrice": 54185.56
         },
         {
           "date": "2026-04-22",
-          "realizedPrice": 53696.75
+          "realizedPrice": 54179.24
         },
         {
           "date": "2026-04-23",
-          "realizedPrice": 53668.36
+          "realizedPrice": 54145.12
         },
         {
           "date": "2026-04-24",
-          "realizedPrice": 53598.32
+          "realizedPrice": 54071.13
         },
         {
           "date": "2026-04-25",
-          "realizedPrice": 53621.76
+          "realizedPrice": 54085.44
         },
         {
           "date": "2026-04-26",
-          "realizedPrice": 53604.3
+          "realizedPrice": 54067.2
         },
         {
           "date": "2026-04-27",
-          "realizedPrice": 53634.93
+          "realizedPrice": 54095.73
         },
         {
           "date": "2026-04-28",
-          "realizedPrice": 53606.73
+          "realizedPrice": 54064.82
         },
         {
           "date": "2026-04-29",
-          "realizedPrice": 53619.15
+          "realizedPrice": 54076.49
         },
         {
           "date": "2026-04-30",
-          "realizedPrice": 53593.57
+          "realizedPrice": 54050.54
         },
         {
           "date": "2026-05-01",
-          "realizedPrice": 53653.83
+          "realizedPrice": 54108.85
         },
         {
           "date": "2026-05-02",
-          "realizedPrice": 53628.85
+          "realizedPrice": 54083.5
         },
         {
           "date": "2026-05-03",
-          "realizedPrice": 53663.37
+          "realizedPrice": 54114.77
         },
         {
           "date": "2026-05-04",
-          "realizedPrice": 53720.29
+          "realizedPrice": 54164.85
         },
         {
           "date": "2026-05-05",
-          "realizedPrice": 53738.59
+          "realizedPrice": 54178.12
         },
         {
           "date": "2026-05-06",
-          "realizedPrice": 53761.16
+          "realizedPrice": 54196.56
         },
         {
           "date": "2026-05-07",
-          "realizedPrice": 53740.88
+          "realizedPrice": 54174.67
         },
         {
           "date": "2026-05-08",
-          "realizedPrice": 53762.46
+          "realizedPrice": 54195.96
         },
         {
           "date": "2026-05-09",
-          "realizedPrice": 53742.56
+          "realizedPrice": 54175.75
         },
         {
           "date": "2026-05-10",
-          "realizedPrice": 53786.96
+          "realizedPrice": 54220.35
         },
         {
           "date": "2026-05-11",
-          "realizedPrice": 53779.05
+          "realizedPrice": 54212.23
         },
         {
           "date": "2026-05-12",
-          "realizedPrice": 53795.07
+          "realizedPrice": 54228.22
         },
         {
           "date": "2026-05-13",
-          "realizedPrice": 53794.85
+          "realizedPrice": 54226.59
         },
         {
           "date": "2026-05-14",
-          "realizedPrice": 53809.13
+          "realizedPrice": 54242.09
         },
         {
           "date": "2026-05-15",
-          "realizedPrice": 53804.64
+          "realizedPrice": 54237.41
         },
         {
           "date": "2026-05-16",
-          "realizedPrice": 53796.54
+          "realizedPrice": 54227.8
         },
         {
           "date": "2026-05-17",
-          "realizedPrice": 53761.74
+          "realizedPrice": 54187.06
         },
         {
           "date": "2026-05-18",
-          "realizedPrice": 53757.51
+          "realizedPrice": 54186.52
         },
         {
           "date": "2026-05-19",
-          "realizedPrice": 53760.13
+          "realizedPrice": 54186.3
         },
         {
           "date": "2026-05-20",
-          "realizedPrice": 53759.27
+          "realizedPrice": 54185.28
         },
         {
           "date": "2026-05-21",
-          "realizedPrice": 53726.72
+          "realizedPrice": 54151.16
         },
         {
           "date": "2026-05-22",
-          "realizedPrice": 53702.13
+          "realizedPrice": 54127.39
         },
         {
           "date": "2026-05-23",
-          "realizedPrice": 53727.12
+          "realizedPrice": 54152.42
         },
         {
           "date": "2026-05-24",
-          "realizedPrice": 53722.11
+          "realizedPrice": 54149.93
         },
         {
           "date": "2026-05-25",
-          "realizedPrice": 53725.16
+          "realizedPrice": 54150.14
         },
         {
           "date": "2026-05-26",
-          "realizedPrice": 53713.52
+          "realizedPrice": 54138.26
         },
         {
           "date": "2026-05-27",
-          "realizedPrice": 53680.63
+          "realizedPrice": 54104.95
         },
         {
           "date": "2026-05-28",
-          "realizedPrice": 53631.12
+          "realizedPrice": 54054.9
         },
         {
           "date": "2026-05-29",
-          "realizedPrice": 53571.83
+          "realizedPrice": 53994.99
         },
         {
           "date": "2026-05-30",
-          "realizedPrice": 53586.91
+          "realizedPrice": 54008.87
         },
         {
           "date": "2026-05-31",
-          "realizedPrice": 53557.09
+          "realizedPrice": 53978.66
         },
         {
           "date": "2026-06-01",
-          "realizedPrice": 53548.77
+          "realizedPrice": 53967.42
         },
         {
           "date": "2026-06-02",
-          "realizedPrice": 53432.09
+          "realizedPrice": 53849.68
         },
         {
           "date": "2026-06-03",
-          "realizedPrice": 53344.3
+          "realizedPrice": 53760.36
         },
         {
           "date": "2026-06-04",
-          "realizedPrice": 53271.76
+          "realizedPrice": 53686.61
         },
         {
           "date": "2026-06-05",
-          "realizedPrice": 53175.81
+          "realizedPrice": 53589.76
         },
         {
           "date": "2026-06-06",
-          "realizedPrice": 53168.25
+          "realizedPrice": 53581.99
         },
         {
           "date": "2026-06-07",
-          "realizedPrice": 53173.05
+          "realizedPrice": 53586.68
         },
         {
           "date": "2026-06-08",
-          "realizedPrice": 53154.45
+          "realizedPrice": 53567.78
         },
         {
           "date": "2026-06-09",
-          "realizedPrice": 53115.31
+          "realizedPrice": 53528.68
         },
         {
           "date": "2026-06-10",
-          "realizedPrice": 53077.91
+          "realizedPrice": 53490.35
         },
         {
           "date": "2026-06-11",
-          "realizedPrice": 53052.12
+          "realizedPrice": 53463.84
         },
         {
           "date": "2026-06-12",
-          "realizedPrice": 53045.14
+          "realizedPrice": 53454.93
         },
         {
           "date": "2026-06-13",
-          "realizedPrice": 53032.68
+          "realizedPrice": 53440.93
         },
         {
           "date": "2026-06-14",
-          "realizedPrice": 53047.99
+          "realizedPrice": 53455.67
         },
         {
           "date": "2026-06-15",
-          "realizedPrice": 53020.27
+          "realizedPrice": 53427.58
         },
         {
           "date": "2026-06-16",
-          "realizedPrice": 53008.12
+          "realizedPrice": 53413.72
         },
         {
           "date": "2026-06-17",
-          "realizedPrice": 53010.89
+          "realizedPrice": 53416.09
         },
         {
           "date": "2026-06-18",
-          "realizedPrice": 52985.22
+          "realizedPrice": 53390.04
         },
         {
           "date": "2026-06-19",
-          "realizedPrice": 52966.57
+          "realizedPrice": 53370.99
         },
         {
           "date": "2026-06-20",
-          "realizedPrice": 52967.78
+          "realizedPrice": 53372.06
         },
         {
           "date": "2026-06-21",
-          "realizedPrice": 52998.77
+          "realizedPrice": 53402.44
         },
         {
           "date": "2026-06-22",
-          "realizedPrice": 52994.83
+          "realizedPrice": 53399.02
         },
         {
           "date": "2026-06-23",
-          "realizedPrice": 52960.34
+          "realizedPrice": 53363.68
         },
         {
           "date": "2026-06-24",
-          "realizedPrice": 52930.72
+          "realizedPrice": 53333.42
         },
         {
           "date": "2026-06-25",
-          "realizedPrice": 52863.92
+          "realizedPrice": 53265.96
         },
         {
           "date": "2026-06-26",
-          "realizedPrice": 52806.09
+          "realizedPrice": 53207.27
         },
         {
           "date": "2026-06-27",
-          "realizedPrice": 52808.86
+          "realizedPrice": 53209.74
         },
         {
           "date": "2026-06-28",
-          "realizedPrice": 52799.27
+          "realizedPrice": 53199.92
         },
         {
           "date": "2026-06-29",
-          "realizedPrice": 52747.82
+          "realizedPrice": 53147.93
         },
         {
           "date": "2026-06-30",
-          "realizedPrice": 52676.96
+          "realizedPrice": 53076.38
         },
         {
           "date": "2026-07-01",
-          "realizedPrice": 52662.84
+          "realizedPrice": 53061.53
         },
         {
           "date": "2026-07-02",
-          "realizedPrice": 52639.75
+          "realizedPrice": 53038.12
         },
         {
           "date": "2026-07-03",
-          "realizedPrice": 52653.01
+          "realizedPrice": 53049.29
         },
         {
           "date": "2026-07-04",
-          "realizedPrice": 52654.68
+          "realizedPrice": 53050.82
         },
         {
           "date": "2026-07-05",
-          "realizedPrice": 52652.37
+          "realizedPrice": 53050.38
         },
         {
           "date": "2026-07-06",
-          "realizedPrice": 52636.23
+          "realizedPrice": 53031.26
         },
         {
           "date": "2026-07-07",
-          "realizedPrice": 52632.39
+          "realizedPrice": 53027.24
         },
         {
           "date": "2026-07-08",
-          "realizedPrice": 52630.4
+          "realizedPrice": 53025.08
         },
         {
           "date": "2026-07-09",
-          "realizedPrice": 52626.42
+          "realizedPrice": 53020.82
         },
         {
           "date": "2026-07-10",
-          "realizedPrice": 52581.54
+          "realizedPrice": 52973.36
         },
         {
           "date": "2026-07-11",
-          "realizedPrice": 52571.52
+          "realizedPrice": 52963.12
         },
         {
           "date": "2026-07-12",
-          "realizedPrice": 52570.5
+          "realizedPrice": 52961.94
         },
         {
           "date": "2026-07-13",
-          "realizedPrice": 52492.97
+          "realizedPrice": 52883.68
         },
         {
           "date": "2026-07-14",
-          "realizedPrice": 52450.54
+          "realizedPrice": 52840.46
         },
         {
           "date": "2026-07-15",
-          "realizedPrice": 52452.83
+          "realizedPrice": 52842.39
         },
         {
           "date": "2026-07-16",
-          "realizedPrice": 52457.61
+          "realizedPrice": 52847.06
         },
         {
           "date": "2026-07-17",
-          "realizedPrice": 52444.96
+          "realizedPrice": 52834.39
         },
         {
           "date": "2026-07-18",
-          "realizedPrice": 52447.77
+          "realizedPrice": 52837.08
         },
         {
           "date": "2026-07-19",
-          "realizedPrice": 52449.51
+          "realizedPrice": 52835.93
         },
         {
           "date": "2026-07-20",
-          "realizedPrice": 52444.77
+          "realizedPrice": 52831.01
         },
         {
           "date": "2026-07-21",
-          "realizedPrice": 52477.75
+          "realizedPrice": 52864.08
         },
         {
           "date": "2026-07-22",
-          "realizedPrice": 52471.83
+          "realizedPrice": 52857.97
         },
         {
           "date": "2026-07-23",
-          "realizedPrice": 52457.42
+          "realizedPrice": 52843.12
         },
         {
           "date": "2026-07-24",
-          "realizedPrice": 52430.87
+          "realizedPrice": 52816.41
         },
         {
           "date": "2026-07-25",
-          "realizedPrice": 52470.83
+          "realizedPrice": 52856.51
         },
         {
           "date": "2026-07-26",
-          "realizedPrice": 52468.49
+          "realizedPrice": 52855.81
         },
         {
           "date": "2026-07-27",
-          "realizedPrice": 52460.75
+          "realizedPrice": 52847.87
         },
         {
           "date": "2026-07-28",
-          "realizedPrice": 52441.81
+          "realizedPrice": 52828.64
         },
         {
           "date": "2026-07-29",
-          "realizedPrice": 52437.77
+          "realizedPrice": 52824.42
         },
         {
           "date": "2026-07-30",
-          "realizedPrice": 52449.96
+          "realizedPrice": 52836.55
         },
         {
           "date": "2026-07-31",
-          "realizedPrice": 52417.73
+          "realizedPrice": 52802.13
         },
         {
           "date": "2026-08-01",
-          "realizedPrice": 52382.33
+          "realizedPrice": 52763.66
         },
         {
           "date": "2026-08-02",
-          "realizedPrice": 52367.36
+          "realizedPrice": 52751.09
         },
         {
           "date": "2026-08-03",
-          "realizedPrice": 52349.9
+          "realizedPrice": 52729.86
         },
         {
           "date": "2026-08-04",
-          "realizedPrice": 52336.83
+          "realizedPrice": 52716.27
         },
         {
           "date": "2026-08-05",
-          "realizedPrice": 52328.04
+          "realizedPrice": 52706.34
         },
         {
           "date": "2026-08-06",
-          "realizedPrice": 52335.82
+          "realizedPrice": 52714.03
         },
         {
           "date": "2026-08-07",
-          "realizedPrice": 52324.9
+          "realizedPrice": 52703.81
         },
         {
           "date": "2026-08-08",
-          "realizedPrice": 52330.02
+          "realizedPrice": 52706.96
         },
         {
           "date": "2026-08-09",
-          "realizedPrice": 52312.89
+          "realizedPrice": 52689.56
         },
         {
           "date": "2026-08-10",
-          "realizedPrice": 52317.8
+          "realizedPrice": 52694.35
         },
         {
           "date": "2026-08-11",
-          "realizedPrice": 52306.27
+          "realizedPrice": 52682.59
         },
         {
           "date": "2026-08-12",
-          "realizedPrice": 52287.27
+          "realizedPrice": 52662.77
         },
         {
           "date": "2026-08-13",
-          "realizedPrice": 52271.45
+          "realizedPrice": 52646.69
         },
         {
           "date": "2026-08-14",
-          "realizedPrice": 52261.85
+          "realizedPrice": 52637.41
         },
         {
           "date": "2026-08-15",
-          "realizedPrice": 52270.35
+          "realizedPrice": 52645.82
         },
         {
           "date": "2026-08-16",
-          "realizedPrice": 52243.94
+          "realizedPrice": 52619.07
         },
         {
           "date": "2026-08-17",
-          "realizedPrice": 52239.77
+          "realizedPrice": 52614.72
         },
         {
           "date": "2026-08-18",
-          "realizedPrice": 52230.99
+          "realizedPrice": 52605.73
         },
         {
           "date": "2026-08-19",
-          "realizedPrice": 52255.99
+          "realizedPrice": 52632.44
         },
         {
           "date": "2026-08-20",
-          "realizedPrice": 52299.94
+          "realizedPrice": 52676.56
         },
         {
           "date": "2026-08-21",
-          "realizedPrice": 52368.57
+          "realizedPrice": 52741.26
         },
         {
           "date": "2026-08-22",
-          "realizedPrice": 52414.85
+          "realizedPrice": 52781.76
         },
         {
           "date": "2026-08-23",
-          "realizedPrice": 52421.33
+          "realizedPrice": 52788.14
         },
         {
           "date": "2026-08-24",
-          "realizedPrice": 52473.26
+          "realizedPrice": 52837.93
         },
         {
           "date": "2026-08-25",
-          "realizedPrice": 52548.11
+          "realizedPrice": 52913.15
         },
         {
           "date": "2026-08-26",
-          "realizedPrice": 52556.76
+          "realizedPrice": 52921.47
         },
         {
           "date": "2026-08-27",
-          "realizedPrice": 52627.55
+          "realizedPrice": 52992.6
         },
         {
           "date": "2026-08-28",
-          "realizedPrice": 52634.95
+          "realizedPrice": 52999.9
         },
         {
           "date": "2026-08-29",
-          "realizedPrice": 52638.67
+          "realizedPrice": 53000.73
         },
         {
           "date": "2026-08-30",
-          "realizedPrice": 52638.19
+          "realizedPrice": 53000.09
         },
         {
           "date": "2026-08-31",
-          "realizedPrice": 52672.49
+          "realizedPrice": 53034.06
         },
         {
           "date": "2026-09-01",
-          "realizedPrice": 52647.4
+          "realizedPrice": 53008.64
         },
         {
           "date": "2026-09-02",
-          "realizedPrice": 52679.58
+          "realizedPrice": 53039.18
         },
         {
           "date": "2026-09-03",
-          "realizedPrice": 52714.93
+          "realizedPrice": 53073.43
         },
         {
           "date": "2026-09-04",
-          "realizedPrice": 52734.28
+          "realizedPrice": 53092.76
         },
         {
           "date": "2026-09-05",
-          "realizedPrice": 52759.53
+          "realizedPrice": 53117.51
         },
         {
           "date": "2026-09-06",
-          "realizedPrice": 52779.18
+          "realizedPrice": 53136.27
         },
         {
           "date": "2026-09-07",
-          "realizedPrice": 52777.74
+          "realizedPrice": 53134.67
         },
         {
           "date": "2026-09-08",
-          "realizedPrice": 52760.15
+          "realizedPrice": 53116.81
         },
         {
           "date": "2026-09-09",
-          "realizedPrice": 52794.62
+          "realizedPrice": 53151.36
         },
         {
           "date": "2026-09-10",
-          "realizedPrice": 52802.89
+          "realizedPrice": 53159.54
         },
         {
           "date": "2026-09-11",
-          "realizedPrice": 52806.05
+          "realizedPrice": 53161.7
         },
         {
           "date": "2026-09-12",
-          "realizedPrice": 52810.74
+          "realizedPrice": 53165.5
         },
         {
           "date": "2026-09-13",
-          "realizedPrice": 52824.63
+          "realizedPrice": 53179.34
         },
         {
           "date": "2026-09-14",
-          "realizedPrice": 52792.53
+          "realizedPrice": 53147.64
         },
         {
           "date": "2026-09-15",
-          "realizedPrice": 52822.44
+          "realizedPrice": 53177.6
         },
         {
           "date": "2026-09-16",
-          "realizedPrice": 52784.89
+          "realizedPrice": 53138.88
         },
         {
           "date": "2026-09-17",
-          "realizedPrice": 52791.26
+          "realizedPrice": 53142.77
         },
         {
           "date": "2026-09-18",
-          "realizedPrice": 52850.93
+          "realizedPrice": 53202.68
         },
         {
           "date": "2026-09-19",
-          "realizedPrice": 52872.82
+          "realizedPrice": 53224.57
         },
         {
           "date": "2026-09-20",
-          "realizedPrice": 52879.51
+          "realizedPrice": 53226.46
         },
         {
           "date": "2026-09-21",
-          "realizedPrice": 52917.18
+          "realizedPrice": 53268.92
         },
         {
           "date": "2026-09-22",
-          "realizedPrice": 53073.85
+          "realizedPrice": 53421.77
         },
         {
           "date": "2026-09-23",
-          "realizedPrice": 53092.97
+          "realizedPrice": 53439.89
         },
         {
           "date": "2026-09-24",
-          "realizedPrice": 53123.16
+          "realizedPrice": 53469.82
         },
         {
           "date": "2026-09-25",
-          "realizedPrice": 53101.6
+          "realizedPrice": 53447.56
         },
         {
           "date": "2026-09-26",
-          "realizedPrice": 53123.63
+          "realizedPrice": 53469.59
         },
         {
           "date": "2026-09-27",
-          "realizedPrice": 53163.28
+          "realizedPrice": 53509.34
         },
         {
           "date": "2026-09-28",
-          "realizedPrice": 53157.82
+          "realizedPrice": 53502.17
         },
         {
           "date": "2026-09-29",
-          "realizedPrice": 53214.97
+          "realizedPrice": 53559.54
         },
         {
           "date": "2026-09-30",
-          "realizedPrice": 53233.86
+          "realizedPrice": 53577.28
         },
         {
           "date": "2026-10-01",
-          "realizedPrice": 53247.35
+          "realizedPrice": 53588.4
         },
         {
           "date": "2026-10-02",
-          "realizedPrice": 53289.53
+          "realizedPrice": 53630.7
         },
         {
           "date": "2026-10-03",
-          "realizedPrice": 53312.6
+          "realizedPrice": 53653.77
         },
         {
           "date": "2026-10-04",
-          "realizedPrice": 53294.67
+          "realizedPrice": 53632.07
         },
         {
           "date": "2026-10-05",
-          "realizedPrice": 53377.1
+          "realizedPrice": 53718.37
         },
         {
           "date": "2026-10-06",
-          "realizedPrice": 53357.38
+          "realizedPrice": 53694.88
         },
         {
           "date": "2026-10-07",
-          "realizedPrice": 53409.28
+          "realizedPrice": 53746.2
         },
         {
           "date": "2026-10-08",
-          "realizedPrice": 53425.75
+          "realizedPrice": 53763.38
         },
         {
           "date": "2026-10-09",
-          "realizedPrice": 53437.54
+          "realizedPrice": 53774.33
         },
         {
           "date": "2026-10-10",
-          "realizedPrice": 53419.98
+          "realizedPrice": 53751.84
         },
         {
           "date": "2026-10-11",
-          "realizedPrice": 53457.47
+          "realizedPrice": 53789.41
         },
         {
           "date": "2026-10-12",
-          "realizedPrice": 53436.0
+          "realizedPrice": 53766.46
         },
         {
           "date": "2026-10-13",
-          "realizedPrice": 53485.56
+          "realizedPrice": 53815.42
         },
         {
           "date": "2026-10-14",
-          "realizedPrice": 53488.52
+          "realizedPrice": 53817.71
         },
         {
           "date": "2026-10-15",
-          "realizedPrice": 53454.59
+          "realizedPrice": 53778.23
         },
         {
           "date": "2026-10-16",
-          "realizedPrice": 53500.94
+          "realizedPrice": 53823.67
         },
         {
           "date": "2026-10-17",
-          "realizedPrice": 53503.6
+          "realizedPrice": 53825.25
         },
         {
           "date": "2026-10-18",
-          "realizedPrice": 53513.06
+          "realizedPrice": 53834.52
         },
         {
           "date": "2026-10-19",
-          "realizedPrice": 53529.68
+          "realizedPrice": 53850.65
         },
         {
           "date": "2026-10-20",
-          "realizedPrice": 53552.2
+          "realizedPrice": 53873.16
         },
         {
           "date": "2026-10-21",
-          "realizedPrice": 53572.96
+          "realizedPrice": 53892.02
         },
         {
           "date": "2026-10-22",
-          "realizedPrice": 53693.11
+          "realizedPrice": 54012.73
         },
         {
           "date": "2026-10-23",
-          "realizedPrice": 53703.92
+          "realizedPrice": 54021.21
         },
         {
           "date": "2026-10-24",
-          "realizedPrice": 53705.0
+          "realizedPrice": 54020.73
+        },
+        {
+          "date": "2026-10-25",
+          "realizedPrice": 54024.33
         }
       ]
     },
     "long_term_holders": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/lth-net-position-change-365d-btc",
-      "latest_date": "2026-10-29",
+      "latest_date": "2026-10-30",
       "records": 730,
       "data": [
-        {
-          "date": "2024-10-28",
-          "lthNetPositionChange365dBtc": -358630.526946
-        },
         {
           "date": "2024-10-29",
           "lthNetPositionChange365dBtc": -353181.5745316
@@ -9162,19 +9158,19 @@
         {
           "date": "2026-10-29",
           "lthNetPositionChange365dBtc": 1149252.8597841
+        },
+        {
+          "date": "2026-10-30",
+          "lthNetPositionChange365dBtc": 1245820.5525936
         }
       ]
     },
     "etf_holdings_btc": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/etf-btc-total",
-      "latest_date": "2026-10-28",
+      "latest_date": "2026-10-29",
       "records": 180,
       "data": [
-        {
-          "date": "2026-02-06",
-          "etfBtcTotal": 666586.9705975
-        },
         {
           "date": "2026-02-09",
           "etfBtcTotal": 668649.7772437
@@ -9890,6 +9886,10 @@
         {
           "date": "2026-10-28",
           "etfBtcTotal": 682559.7315951
+        },
+        {
+          "date": "2026-10-29",
+          "etfBtcTotal": 682779.6989349
         }
       ]
     }
