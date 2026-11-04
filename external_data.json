@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-03T08:33:33.648041+00:00",
+  "generated_utc": "2026-11-04T07:59:38.925692+00:00",
   "feeds": {
     "onchain": {
       "status": "unavailable",
@@ -16,13 +16,9 @@
     "fear": {
       "status": "verified",
       "source": "https://api.alternative.me/fng/?limit=120&format=json",
-      "latest_date": "2026-11-03",
+      "latest_date": "2026-11-04",
       "records": 90,
       "data": [
-        {
-          "date": "2026-08-06",
-          "score": 25.0
-        },
         {
           "date": "2026-08-07",
           "score": 29.0
@@ -378,19 +374,19 @@
         {
           "date": "2026-11-03",
           "score": 26.0
+        },
+        {
+          "date": "2026-11-04",
+          "score": 34.0
         }
       ]
     },
     "mvrv_z_delayed": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/mvrv-zscore",
-      "latest_date": "2026-10-27",
+      "latest_date": "2026-10-28",
       "records": 730,
       "data": [
-        {
-          "date": "2024-10-28",
-          "mvrvZscore": 2.0003
-        },
         {
           "date": "2024-10-29",
           "mvrvZscore": 2.1454
@@ -3306,19 +3302,19 @@
         {
           "date": "2026-10-27",
           "mvrvZscore": 0.8725
+        },
+        {
+          "date": "2026-10-28",
+          "mvrvZscore": 0.8833
         }
       ]
     },
     "realized_price_delayed": {
       "status": "verified",
       "source": "https://api.bitcoin-data.com/v1/realized-price",
-      "latest_date": "2026-10-27",
+      "latest_date": "2026-10-28",
       "records": 730,
       "data": [
-        {
-          "date": "2024-10-28",
-          "realizedPrice": 32941.6
-        },
         {
           "date": "2024-10-29",
           "realizedPrice": 33045.0
@@ -6234,6 +6230,10 @@
         {
           "date": "2026-10-27",
           "realizedPrice": 54024.66
+        },
+        {
+          "date": "2026-10-28",
+          "realizedPrice": 54058.68
         }
       ]
     },
