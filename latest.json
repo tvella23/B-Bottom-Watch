@@ -1,8 +1,8 @@
 {
   "source": "Bitstamp BTCUSD public OHLC; standard non-Heikin-Ashi daily candles",
-  "generated_utc": "2026-11-14T07:59:39.818870+00:00",
+  "generated_utc": "2026-11-15T08:26:13.811655+00:00",
   "last_completed_candles": {
-    "day": "2026-11-13",
+    "day": "2026-11-14",
     "week_ending_sunday": "2026-11-08",
     "month_ending": "2026-10-31"
   },
@@ -34,8 +34,8 @@
     "fully_bullish_ordered": false
   },
   "pi_cycle_bottom": {
-    "ema_150": 76244.3468,
-    "sma_471_times_0_745": 62839.6271,
+    "ema_150": 76083.6759,
+    "sma_471_times_0_745": 62757.9518,
     "crossed_today": false,
     "recent_historical_crossovers": [
       "2018-12-16",
