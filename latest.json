@@ -1,9 +1,9 @@
 {
   "source": "Bitstamp BTCUSD public OHLC; standard non-Heikin-Ashi daily candles",
-  "generated_utc": "2026-11-15T08:26:13.811655+00:00",
+  "generated_utc": "2026-11-16T08:34:10.633216+00:00",
   "last_completed_candles": {
-    "day": "2026-11-14",
-    "week_ending_sunday": "2026-11-08",
+    "day": "2026-11-15",
+    "week_ending_sunday": "2026-11-15",
     "month_ending": "2026-10-31"
   },
   "quality": {
@@ -20,22 +20,22 @@
   },
   "weekly_ema_ribbon": {
     "ema_values": {
-      "20": 76618.8435,
-      "25": 76387.8341,
-      "30": 76540.1077,
-      "35": 76922.0611,
-      "40": 77409.8917,
-      "45": 77917.4754,
-      "50": 78390.1005,
-      "55": 78795.9993
+      "20": 75542.047,
+      "25": 75535.8838,
+      "30": 75815.7446,
+      "35": 76277.0843,
+      "40": 76819.774,
+      "45": 77369.4321,
+      "50": 77877.2526,
+      "55": 78314.445
     },
-    "completed_week_close": 74742.52,
+    "completed_week_close": 65312.48,
     "close_above_all": false,
     "fully_bullish_ordered": false
   },
   "pi_cycle_bottom": {
-    "ema_150": 76083.6759,
-    "sma_471_times_0_745": 62757.9518,
+    "ema_150": 75941.011,
+    "sma_471_times_0_745": 62682.1382,
     "crossed_today": false,
     "recent_historical_crossovers": [
       "2018-12-16",
